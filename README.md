@@ -18,9 +18,17 @@
 
 ## 怎么用
 
-协议正文是纯 Markdown，不依赖任何平台的特定功能，三种用法都行。
+协议正文（`SKILL.md`）是纯 Markdown，不依赖任何平台的特定功能，几种用法都行。
 
-**直接当 prompt 用。** 复制 `PROTOCOL.md` 全文，粘贴到任意模型的对话框，后面接上要改的文本。最省事，也最通用。
+**作为 Claude Code skill 安装。** 如果你用 Claude Code，一条命令 clone 到自己的 skills 目录就行，之后 Claude 会按 `SKILL.md` 头部里写的触发条件自动调用，不用每次手动粘贴：
+
+```bash
+git clone https://github.com/Maoziwang725/natural-chinese-protocol ~/.claude/skills/natural-chinese-protocol
+```
+
+装好后重启 Claude Code，让它识别到这个新 skill。想要它对某个项目生效，把上面的 `~/.claude/skills` 换成该项目下的 `.claude/skills` 即可。
+
+**直接当 prompt 用。** 复制 `SKILL.md` 全文，粘贴到任意模型的对话框，后面接上要改的文本。最省事，也最通用。
 
 **写进长期指令。** 多数 AI 工具都提供某种形式的持久化配置，比如系统提示词、自定义指令、项目级配置文件。把协议正文放进去，之后不用每次重复粘贴。具体位置查各自的文档。
 
